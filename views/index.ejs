@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+</body>
+<script>
+
+
+
+    const dataReciever = async () => {
+        try {
+
+            document.title = 'Loading';
+
+            document.body.innerHTML = '<canvas id="myChart" width="400" height="400"></canvas>';
+
+
+            const ctx = document.getElementById('myChart');
+
+            const resData = await fetch('/get-data', {
+                method: 'GET',
+                mode: 'no-cors'
+            });
+
+            console.log('res data is ', resData);
+            let data = await resData.json();
+
+
+            const myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.labels,
+                    datasets: data.dataSet
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            document.title = `Chart Loaded`;
+            return;
+
+
+        } catch (e) {
+            console.log('error in data recieving ', e);
+            return;
+        }
+
+    }
+
+    dataReciever();
+    setInterval(dataReciever, 10000)
+
+
+</script>
+
+</html>

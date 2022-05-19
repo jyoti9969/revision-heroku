@@ -86,6 +86,8 @@ app.get("/get-data", async (req, res) => {
   }
 });
 
-app.listen(8000, () => {
-  console.log("server running on port 8000");
-});
+// app.listen(8000, () => {
+//   console.log("server running on port 8000");
+// });
+
+app.listen(process.env.PORT || 8000)

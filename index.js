@@ -29,7 +29,7 @@ app.get("/get-data", async (req, res) => {
     ];
 
     let borderColorData = [
-      "rgba(0,0,125,0.4)",
+      "rgb(30,144,255)",
      
     ];
 

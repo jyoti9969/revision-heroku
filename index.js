@@ -24,12 +24,12 @@ app.get("/get-data", async (req, res) => {
     let entries = responseData.data.values;
 
     let backgroundColorData = [
-      "rgba(255, 99, 132, 0.2)",
+      "rgba(0,0,0,0)",
       
     ];
 
     let borderColorData = [
-      "rgb(0,0,128)",
+      "rgb(0,0,125)",
      
     ];
 

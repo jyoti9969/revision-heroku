@@ -59,7 +59,7 @@ app.get("/get-data", async (req, res) => {
 
     let dataSet = [
       {
-        label: "Time X Frequency Graph",
+        label: "Time X Signal strength Graph",
         data: values,
         backgroundColor: backgroundColor,
         borderColor: borderColor,
